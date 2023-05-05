@@ -23,8 +23,7 @@ jobs:
           role-to-assume: arn:aws:iam::034067736585:role/github_access_role
           role-session-name: MySessionName
           aws-region: us-east-1
-      - name: Configure Terraform remote backend
-        run: terraform init -backend-config="bucket=<your-bucket-name>" -backend-config="key=<your-state-file-name>" -backend-config="region=<your-bucket-region>" -backend-config="dynamodb_table=<your-dynamodb-table-name>"
+
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
@@ -34,4 +33,4 @@ jobs:
         run: terraform init
 
       - name: plan Terraform
-        run: terraform destroy --auto-approve
+        run: terraform apply --auto-approve
