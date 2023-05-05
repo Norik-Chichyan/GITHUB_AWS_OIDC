@@ -1,4 +1,4 @@
-name: Scan Dockerfiles
+name: AWS-access
 
 on:
   push:
@@ -22,6 +22,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::034067736585:role/github_access_role
           role-session-name: MySessionName
+          aws-region: us-east-1
 
       - name: Initialize Terraform
         run: terraform init
