@@ -23,14 +23,14 @@ jobs:
           role-to-assume: arn:aws:iam::034067736585:role/github_access_role
           role-session-name: MySessionName
           aws-region: us-east-1
-
-      - name: Terraform fmt
-        id: fmt
-        run: terraform fmt -check
-        continue-on-error: true
+#
+#      - name: Terraform fmt
+#        id: fmt
+#        run: terraform fmt -check
+#        continue-on-error: true
 
       - name: Initialize Terraform
         run: terraform init
 
       - name: plan Terraform
-        run: terraform apply --auto-approve
+        run: terraform destroy --auto-approve
