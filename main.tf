@@ -9,8 +9,6 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  access_key = "${{ secrets.MY_AWS_ACCESS_KEY }}"
-  secret_key = "${{ secrets.MY_AWS_SECRET_KEY }}"
 }
 
 data "aws_ami" "ubuntu" {
